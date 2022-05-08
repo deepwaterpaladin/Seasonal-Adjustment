@@ -24,14 +24,6 @@ class Energy(Commodity):
         self.ax.set_ylabel('Price (Index: 1972 = $100)')
         self.ax.set_title(f'{self.name} Prices')
         self.ax.legend()
-    def plot_commodity(self):
-        self.energy_db = pd.DataFrame({'Date': [i.value for i in self.date_col[11:279]],'Price': [i.value for i in self.energy_col[11:279]]})
-        self.fig, self.ax = plt.subplots(figsize=(18,9))
-        self.ax.plot(self.energy_db["Date"], self.energy_db["Price"], label=self.name)
-        self.ax.set_xlabel('Date')
-        self.ax.set_ylabel('Price (Index: 1972 = $100)')
-        self.ax.set_title(f'{self.name} Prices')
-        self.ax.legend()
     def plot_twelve_months(self):
         self.energy_db = pd.DataFrame({'Date': [i.value for i in self.date_col[267:279]],'Price': [i.value for i in self.energy_col[267:279]]})
         self.fig, self.ax = plt.subplots(figsize=(18,9))
@@ -104,13 +96,13 @@ class Metals(Commodity):
         self.ax.set_title(f'{self.name} Prices, Previous 5 Years')
         self.ax.legend()
     def plot_ten_years(self):
-            self.metals_db = pd.DataFrame({'Date': [i.value for i in self.date_col[159:279]],'Price': [i.value for i in self.metals_col[159:279]]})
-            self.fig, self.ax = plt.subplots(figsize=(18,9))
-            self.ax.plot(self.metals_db["Date"], self.metals_db["Price"], label=self.name)
-            self.ax.set_xlabel('Date')
-            self.ax.set_ylabel('Price (Index: 1972 = $100)')
-            self.ax.set_title(f'{self.name} Prices, Previous 10 Years')
-            self.ax.legend()
+        self.metals_db = pd.DataFrame({'Date': [i.value for i in self.date_col[159:279]],'Price': [i.value for i in self.metals_col[159:279]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.metals_db["Date"], self.metals_db["Price"], label=self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('Price (Index: 1972 = $100)')
+        self.ax.set_title(f'{self.name} Prices, Previous 10 Years')
+        self.ax.legend()
 
 class Agricultural(Commodity):
     def __init__(self):
