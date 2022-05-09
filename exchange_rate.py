@@ -168,6 +168,101 @@ class GBP(ExchangeRate):
         self.ax.set_title('GBP/CAD Exchange Rate')
         self.ax.grid(True)
         self.ax.legend()
+    
+    def seven_day_plot(self) -> None:
+        '''
+        Creates a plot of the 7 most recent days of the USD/CAD exchange rate.
+        '''
+        self.seven_day_db = pd.DataFrame({'Date': [i.value for i in self.date_col[1339:1346]], 'Dollars': [i.value for i in self.GBP_col[1339:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.seven_day_db['Date'], self.seven_day_db['Dollars'], label='1 GBP')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('GBP/CAD 7 Day Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+
+    def thirty_day_plot(self):
+        '''
+        Creates a plot of the 30 most recent days of the GBP/CAD exchange rate.
+        '''
+        self.thirty_day_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1316:1346]], 'Dollars': [i.value for i in self.GBP_col[1316:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.thirty_day_range['Date'], self.thirty_day_range['Dollars'], label='1 GBP')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('GBP/CAD 30 Day Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+
+    def sixty_day_plot(self):
+        '''
+        Creates a plot of the 60 most recent days of the GBP/CAD exchange rate.
+        '''
+        self.sixty_day_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1286:1346]], 'Dollars': [i.value for i in self.GBP_col[1286:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.sixty_day_range['Date'], self.sixty_day_range['Dollars'], label='1 GBP')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('GBP/CAD 60 Day Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+
+    def ninety_day_plot(self):
+        '''
+        Creates a plot of the 90 most recent days of the GBP/CAD exchange rate.
+        '''
+        self.ninety_day_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1256:1346]], 'Dollars': [i.value for i in self.GBP_col[1256:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.ninety_day_range['Date'], self.ninety_day_range['Dollars'], label='1 GBP')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('GBP/CAD 90 Day Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+        
+    def six_month_plot(self):
+        '''
+        Creates a plot of the 6 most recent months of the GBP/CAD exchange rate.
+        '''
+        self.six_month_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1226:1346]], 'Dollars': [i.value for i in self.GBP_col[1226:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.six_month_range['Date'], self.six_month_range['Dollars'], label='1 GBP')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('GBP/CAD 6 Month Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+    
+    def one_year_plot(self):
+        '''
+        Creates a plot of the most recent year of the GBP/CAD exchange rate.
+        '''
+        self.one_year_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1086:1346]], 'Dollars': [i.value for i in self.GBP_col[1086:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.one_year_range['Date'], self.one_year_range['Dollars'], label='1 GBP')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('GBP/CAD 1 Year Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+
+    def three_year_plot(self):
+        self.three_year_range = pd.DataFrame({'Date': [i.value for i in self.date_col[566:1346]], 'Dollars': [i.value for i in self.GBP_col[566:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.three_year_range['Date'], self.three_year_range['Dollars'], label='1 GBP')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('GBP/CAD 3 Year Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
 
 class USD(ExchangeRate):
     '''
@@ -185,7 +280,7 @@ class USD(ExchangeRate):
         self.ax.set_title(self.name)
         self.ax.set_xlabel('Date')
         self.ax.set_ylabel('CAD Dollars')
-        self.ax.set_title('USDw/CAD Exchange Rate')
+        self.ax.set_title('USD/CAD Exchange Rate')
         self.ax.grid(True)
         self.ax.legend()
     
@@ -193,9 +288,9 @@ class USD(ExchangeRate):
         '''
         Creates a plot of the 7 most recent days of the USD/CAD exchange rate.
         '''
-        self.seven_day_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1339:1346]], 'Dollars': [i.value for i in self.USD_col[1339:1346]]})
+        self.seven_day_db = pd.DataFrame({'Date': [i.value for i in self.date_col[1339:1346]], 'Dollars': [i.value for i in self.USD_col[1339:1346]]})
         self.fig, self.ax = plt.subplots(figsize=(18,9))
-        self.ax.plot(self.seven_day_range['Date'], self.seven_day_range['Dollars'], label='1 USD')
+        self.ax.plot(self.seven_day_db['Date'], self.seven_day_db['Dollars'], label='1 USD')
         self.ax.set_title(self.name)
         self.ax.set_xlabel('Date')
         self.ax.set_ylabel('CAD Dollars')
@@ -203,10 +298,83 @@ class USD(ExchangeRate):
         self.ax.grid(True)
         self.ax.legend()
 
-    # def thirty_day_plot(self):
-    # def sixty_day_plot(self):
-    # def ninety_day_plot(self):
-    # def six_month_plot(self):
-    # def one_year_plot(self):
-    # def three_year_plot(self):
+    def thirty_day_plot(self):
+        '''
+        Creates a plot of the 30 most recent days of the USD/CAD exchange rate.
+        '''
+        self.thirty_day_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1316:1346]], 'Dollars': [i.value for i in self.USD_col[1316:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.thirty_day_range['Date'], self.thirty_day_range['Dollars'], label='1 USD')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('USD/CAD 30 Day Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
 
+    def sixty_day_plot(self):
+        '''
+        Creates a plot of the 60 most recent days of the USD/CAD exchange rate.
+        '''
+        self.sixty_day_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1286:1346]], 'Dollars': [i.value for i in self.USD_col[1286:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.sixty_day_range['Date'], self.sixty_day_range['Dollars'], label='1 USD')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('USD/CAD 60 Day Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+
+    def ninety_day_plot(self):
+        '''
+        Creates a plot of the 90 most recent days of the USD/CAD exchange rate.
+        '''
+        self.ninety_day_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1256:1346]], 'Dollars': [i.value for i in self.USD_col[1256:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.ninety_day_range['Date'], self.ninety_day_range['Dollars'], label='1 USD')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('USD/CAD 90 Day Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+        
+    def six_month_plot(self):
+        '''
+        Creates a plot of the 6 most recent months of the USD/CAD exchange rate.
+        '''
+        self.six_month_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1226:1346]], 'Dollars': [i.value for i in self.USD_col[1226:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.six_month_range['Date'], self.six_month_range['Dollars'], label='1 USD')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('USD/CAD 6 Month Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+    
+    def one_year_plot(self):
+        '''
+        Creates a plot of the most recent year of the USD/CAD exchange rate.
+        '''
+        self.one_year_range = pd.DataFrame({'Date': [i.value for i in self.date_col[1086:1346]], 'Dollars': [i.value for i in self.USD_col[1086:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.one_year_range['Date'], self.one_year_range['Dollars'], label='1 USD')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('USD/CAD 1 Year Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
+
+    def three_year_plot(self):
+        self.three_year_range = pd.DataFrame({'Date': [i.value for i in self.date_col[566:1346]], 'Dollars': [i.value for i in self.USD_col[566:1346]]})
+        self.fig, self.ax = plt.subplots(figsize=(18,9))
+        self.ax.plot(self.three_year_range['Date'], self.three_year_range['Dollars'], label='1 USD')
+        self.ax.set_title(self.name)
+        self.ax.set_xlabel('Date')
+        self.ax.set_ylabel('CAD Dollars')
+        self.ax.set_title('USD/CAD 3 Year Exchange Rate')
+        self.ax.grid(True)
+        self.ax.legend()
