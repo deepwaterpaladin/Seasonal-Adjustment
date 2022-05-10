@@ -44,6 +44,7 @@ class AUD(ExchangeRate):
         self.ax.set_title('AUD/CAD 7 Day Exchange Rate')
         self.ax.grid(True)
         self.ax.legend()
+    
     def fourteen_day_plot(self) -> None:
         '''
         Creates a plot of the 14 most recent days of the AUD/CAD exchange rate.
@@ -147,6 +148,7 @@ class YUAN(ExchangeRate):
         self.name = self.ws['C10'].value
         self.YUAN_col = self.ws['C']
         self.YUAN_db = pd.DataFrame({'Date': [i.value for i in self.date_col[13:1346]], 'Dollars': [i.value for i in self.YUAN_col[13:1346]]})
+    
     def plot_YUAN(self):
         self.fig, self.ax = plt.subplots(figsize=(18,9))
         self.ax.plot(self.YUAN_db['Date'], self.YUAN_db['Dollars'], label='1 Yuan')
@@ -170,6 +172,7 @@ class YUAN(ExchangeRate):
         self.ax.set_title('YUAN/CAD 7 Day Exchange Rate')
         self.ax.grid(True)
         self.ax.legend()
+    
     def fourteen_day_plot(self) -> None:
         '''
         Creates a plot of the 14 most recent days of the YUAN/CAD exchange rate.
@@ -273,6 +276,7 @@ class INR(ExchangeRate):
         self.name = self.ws['D10'].value
         self.INR_col = self.ws['D']
         self.INR_db = pd.DataFrame({'Date': [i.value for i in self.date_col[13:1346]], 'Dollars': [i.value for i in self.INR_col[13:1346]]})
+    
     def plot_INR(self):
         self.fig, self.ax = plt.subplots(figsize=(18,9))
         self.ax.plot(self.INR_db['Date'], self.INR_db['Dollars'], label='1 INR')
@@ -296,6 +300,7 @@ class INR(ExchangeRate):
         self.ax.set_title('INR/CAD 7 Day Exchange Rate')
         self.ax.grid(True)
         self.ax.legend()
+    
     def fourteen_day_plot(self) -> None:
         '''
         Creates a plot of the 14 most recent days of the INR/CAD exchange rate.
