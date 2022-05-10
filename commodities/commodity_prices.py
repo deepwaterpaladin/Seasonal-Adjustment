@@ -5,9 +5,9 @@ from openpyxl import load_workbook
 
 class Commodity:
     def __init__(self):
-        self.wb = load_workbook(filename='data/prices.xlsx')
+        self.wb = load_workbook(filename='data/prices.xlsx') 
         self.ws = self.wb.active
-        self.date_col = self.ws["B"]
+        self.date_col = self.ws["B"] 
         pass
 
 class Energy(Commodity):
