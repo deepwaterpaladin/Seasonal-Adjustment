@@ -1,16 +1,9 @@
-from operator import index
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 from openpyxl import load_workbook
 
-# 05-10-2012 to 05-10-2022
-# Date range A17:A2513
-# 2-Year Yield Column B
-# 3-Year Yield Column C
-# 5-Year Yield Column D
-# 7-Year Yield Column E
-# 10-Year Yield Column F
-# 30-Year Yield Column G
+
 
 class Bond:
     def __init__(self):
